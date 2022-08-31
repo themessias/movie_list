@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+a { color: #377ba8; text-decoration: none;}
+body { max-width: 960px; margin: 0 auto; background: white; }
+div span {width:4.5%;}
+h1 { font-family: serif; color: #377ba8; }
+h1, .h1 { font-size: 1.3em;}
+hr { border: none; border-top: 1px solid lightgray; }
+.fa-file-circle-plus, .fa-file-pen { padding-right: 3px; font-size: x-large;}
+
+/* -------------  HEADER  ------------- */
+
+header {  display: flex; justify-content: space-between; align-items: flex-end;}
+.content > header { border-bottom: 1px solid lightgray; display: flex; align-items: flex-end; margin: -0.25rem 0; }
+.content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
+.post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
+.post > header > div:first-of-type { flex: auto; }
+.post > header h1 { font-size: 1.5em; margin-bottom: 0; }
+
+/* ----------- HEADER END  ----------- */
+
+html { font-family: 'Roboto Slab', sans-serif; font-weight: 400; background: #eee; }
+nav { background: #bfebf5; display: flex; align-items: center; padding: 0.7rem; justify-content: space-between;}
+nav h1 { flex: auto; margin: 0; }
+nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
+nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }
+nav ul li a, nav ul li span, header .action { display: block; }
+ol { padding-left: 1rem;}
+thead tr th:nth-child(2) {width: 90%;}
+.content { padding: 0 1rem 1rem; }
+
+.post .about { color: slategray; font-style: italic; }
+.post .body { white-space: pre-line; }
+.content:last-child { margin-bottom: 0; }
+.content form { margin: 1em 0; display: flex; flex-direction: column; }
+.content label { font-weight: bold; margin-bottom: 0.5em; }
+button.btn-success {width:49.5%; }
+button.btn-danger {width: 49.5%; }

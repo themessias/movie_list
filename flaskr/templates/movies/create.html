@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title%}New Movie{% endblock %}</h1>
+    <a href="{{ url_for('index') }}" class="action">Back</a>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="title">Title</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="addonTitle">
+                <i class="fa-solid fa-font"></i>
+            </span>
+            <input type="text" name="title" id="title" class="form-control"
+                value="{{ request.form['title'] }}"
+                placeholder="Title" aria-label="Title" 
+                aria-describedby="addonTitle" required>
+        </div>
+        <label for="year">Year</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="addonYear">
+                <i class="fa-solid fa-hashtag"></i>
+            </span>
+            <input type="number" name="year" id="year" class="form-control"
+                placeholder="Year" aria-label="Year"
+                aria-describedby="addonYear" maxlength=4 required>
+        </div>
+        <label for="link">Link</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="addonLink">
+                <i class="fa-solid fa-link"></i>
+            </span>
+            <input type="text" name="link" id="link" class="form-control"
+                placeholder="Link" aria-label="Year"
+                aria-describedby="addonLink">
+        </div>
+        <button type="submit" class="btn btn-success mx-auto">Save</button>
+    </form>
+{% endblock %}

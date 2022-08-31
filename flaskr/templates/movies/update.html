@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %} Edit "{{ movie[1]}}"{% endblock %}</h1>
+    <a href="{{ url_for('index')}}" class="action">Back</a>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <label for="title" class="form-label">Title</label>
+        <div class="input-group"> 
+            <span class="input-group-text" id="addonTitle">
+                <i class="fa-solid fa-font"></i>
+            </span>
+            <input type="text" name="title" id="title" class="form-control"
+                placeholder="Title" value="{{ request.form['title'] or movie[1]}}"
+                aria-label="Title" aria-describedby="addonTitle" required>
+        </div>
+        <label for="year" class="form-label">Year</label>
+        <div class="input-group">
+            <span class="input-group-text" id="addonYear">
+                <i class="fa-solid fa-hashtag"></i>
+            </span>
+            <input type="number" name="year" id="year" class="form-control"
+                placeholder="Year" maxlength=4 
+                value="{{ request.form['year'] or movie[3]}}"
+                aria-label="Year" aria-describedby="addonYear" required>
+        </div>
+        <label for="link" class="form-label">Link</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="addonLink">
+                <i class="fa-solid fa-link"></i>
+            </span>
+            <input type="text" name="link" id="link" class="form-control"
+                placeholder="Link" aria-label="Link" aria-describedby="addonLink">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success float-left">Save</button>
+            <button type="submit" class="btn btn-danger float-right"
+                formaction = "{{ url_for('movies.delete', id=movie[0]) }}"
+                onclick="return confirm('Are you sure?);">Delete</button>
+        </div>    
+    </form>
+{% endblock %}
